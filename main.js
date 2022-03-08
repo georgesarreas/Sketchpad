@@ -1,12 +1,15 @@
 //populate the container\
-function createGrid(x) {
-    x=16;
-    for (var rows=0; rows <x ; rows++){
-        for (var columns = 0; columns <x ; columns++){
-            $(".container").append("<div class="grid"></div>");
-        };
-    };
-    $(".grid").width(960/x);
-    $(".grid").height(960/x);
+
+function createGrid(size) {
+    let container = document.querySelector('.container');
+    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
+    for (let i=0; i<256; i++){
+        let cell=document.createElement("div");
+        cell.style.backgroundColor = 'black';
+        container.insertAdjacentElement("beforeend" , cell);
+    }
 }
 
+createGrid(16);

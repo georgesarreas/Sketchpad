@@ -1,16 +1,5 @@
 .container {
-	margin:auto;
-	height:960px;
-	width:960px;
-	padding: 0;
-	border: none;
-}
-
-
-.grid {
-	margin:0;
-	padding:0;
-	border:none;
-	outline:1px solid #000;
-	display:inline-block;
+	width: 500px;
+	height: 500px;
+	display: grid;
 }
