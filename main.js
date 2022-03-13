@@ -1,9 +1,11 @@
 let color = 'black';
+let container = document.querySelector('.container');
+let cells = container.querySelectorAll('div');
 
 //populate the container\
 function createGrid(size) {
     let container = document.querySelector('.container');
-    let cells = container.querySelectorAll("div");
+    let cells = container.querySelectorAll('div');
     cells.forEach((div) => div.remove());
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
@@ -26,13 +28,21 @@ function reSize(input) {
     } else {
         console.log("number between 2 and 100");
     }
-}
+};
 
 function paintCell() {
-    this.style.backgroundColor = color ;
-}
+    if( color === 'rainbow'){
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`; 
+    }else {
+        this.style.backgroundColor = color ;
+    }
+};
 
 function pickColor(selection) {
     color = selection;
-}
+};
+
+function clear(){
+    cells.forEach((div) => (div.style.backgroundColor = 'black'));
+};
 
