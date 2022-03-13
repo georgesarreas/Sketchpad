@@ -13,13 +13,15 @@
         <div class="flex-container">
             
             <div class = "preferences">
-                <button class="colorPicker">Select a color</button>
-                <button class="clear">Clear pad</button>
-                <button class="gridSize">Grid size</button>
+                <button onclick="pickColor('black')">Black</button>
+                <button onclick="pickColor('white')">Whitebrush</button>
+                <button >Clear</button>
+                <button >rainbow</button>
             </div>
             <div class="container"></div> 
             <div>
-                <input type="text" placeholder="Size of board" value="16"
+                <input type="text" placeholder="Sketchboard size" value="16" onchange="reSize(this.value)">
+                <button>Change Size(2-100)</button>
             </div>
         </div>
 
