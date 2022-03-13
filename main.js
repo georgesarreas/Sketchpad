@@ -4,8 +4,6 @@ let cells = container.querySelectorAll('div');
 
 //populate the container\
 function createGrid(size) {
-    let container = document.querySelector('.container');
-    let cells = container.querySelectorAll('div');
     cells.forEach((div) => div.remove());
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
@@ -42,7 +40,9 @@ function pickColor(selection) {
     color = selection;
 };
 
-function clear(){
-    cells.forEach((div) => (div.style.backgroundColor = 'black'));
+function clearCont(){
+    cells.forEach((div) => (div.style.backgroundColor = "white"));
+    console.log('this is fun');
+    
 };
 
