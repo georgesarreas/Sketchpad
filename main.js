@@ -22,19 +22,23 @@ function createGrid(size) {
 createGrid(16);
 
 function reSize(input) {
-    if (input>=2 && input<=100){
-    createGrid(input);
+    if (input>=2 && input<=200){
+        document.getElementById('notInRange').style.display = 'none';
+        createGrid(input);
     } else {
-        console.log("number between 2 and 100");
+        document.getElementById('notInRange').style.display = 'flex';
     }
 };
 
 function paintCell() {
-    if( color === 'rainbow'){
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`; 
-    }else {
-        this.style.backgroundColor = color ;
+    if (click){
+        if( color === 'rainbow'){
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`; 
+        }else {
+            this.style.backgroundColor = color ;
+        }
     }
+
 };
 
 function pickColor(selection) {
@@ -47,6 +51,6 @@ function clearCont(){
     cells.forEach((div) => (div.style.backgroundColor = "white"));
 };
 
-document.querySelectorAll('body').addEventListener('click' , ()=> {
+document.querySelector('body').addEventListener('click' , ()=> {
     click = !click;
 });

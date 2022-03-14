@@ -9,24 +9,25 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header><h1>Sketchpad</h1></header>
         <div class="flex-container">
-            
-            <div class = "preferences">
-                <button onclick="pickColor('black')">Black</button>
-                <button onclick="pickColor('white')">Whitebrush</button>
-                <button onclick="pickColor('gray')">gray</button>
-                <button onclick="pickColor('rainbow')">rainbow</button>
-                <button onclick="clearCont()">Clear</button>
+            <div class="header"><h1>Sketchpad</h1></div>
+            <div class="main">
+                <div class="container"></div> 
+                <div class = "preferences">
+                    <button class="black" onclick="pickColor('black')">Black</button>
+                    <button class="white" onclick="pickColor('white')">Whitebrush</button>
+                    <button class="gray" onclick="pickColor('gray')">gray</button>
+                    <button class="rainbow" onclick="pickColor('rainbow')">rainbow</button>
+                    <button class="clearBtn" onclick="clearCont()">Clear</button>
+                </div>
+                
             </div>
-            <div class="container"></div> 
             <div>
                 <input type="text" placeholder="Sketchboard size" value="16" onchange="reSize(this.value)">
-                <button>Change Size(2-100)</button>
+                <button>Change Size</button>
             </div>
+            <div id="notInRange" >Size must be between 2 and 200</div>
         </div>
-
-
-    <script src="main.js " async defer></script>
     </body>
+    <script src="main.js " async defer></script>
 </html>
